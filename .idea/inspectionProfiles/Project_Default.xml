@@ -1,0 +1,51 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="capri.config.urls.views" />
+          <option value="rest_trello.models.MainDesk.objects" />
+          <option value="rest_trello.models.Column.objects" />
+          <option value="type.with_ui" />
+          <option value="type.without_ui" />
+          <option value="rest_trello.models.Card.objects" />
+          <option value="rest_trello.models.Card.DoesNotExist" />
+          <option value="rest_trello.models.Column.DoesNotExist" />
+          <option value="rest_trello.models.MainDesk.DoesNotExist" />
+          <option value="advertisement.models.Advertisement.objects" />
+          <option value="projects.models.Project.objects" />
+          <option value="trello.models.MainDeskFavorites.objects" />
+          <option value="trello.models.MainDeskArchive.objects" />
+          <option value="trello.models.Column.objects" />
+          <option value="trello.models.Column.DoesNotExist" />
+          <option value="decouple.config" />
+          <option value="trello.models.CheckList.objects" />
+          <option value="trello.models.CheckList.DoesNotExist" />
+          <option value="trello.models.Metki.objects" />
+          <option value="trello.models.Metki.DoesNotExist" />
+          <option value="trello.models.Card.objects" />
+          <option value="todo_app.models.ToDoItem.objects" />
+          <option value="todo_app.models.ToDoItem.DoesNotExist" />
+          <option value="todo_app.models.ToDoList.DoesNotExist" />
+          <option value="todo_app.models.ToDoList.objects" />
+          <option value="rest_framework.authtoken.models.Token.objects" />
+          <option value="projects.models.Project.DoesNotExist" />
+          <option value="todo.models.ToDoItem.objects" />
+          <option value="todo.models.ToDoList.objects" />
+          <option value="blog.models.Post.objects" />
+          <option value="blog.models.Post.DoesNotExist" />
+          <option value="blog.models.Category.objects" />
+          <option value="blog.models.Comment.objects" />
+          <option value="diary.models.Entry.objects" />
+          <option value="diary.models.Entry.DoesNotExist" />
+          <option value="flashcard.models.Card.DoesNotExist" />
+          <option value="flashcard.models.Card.objects" />
+          <option value="trello.models.MemberDesk.objects" />
+          <option value="trello.models.Card.DoesNotExist" />
+          <option value="trello.models.MainDesk.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

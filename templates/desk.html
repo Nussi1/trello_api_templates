@@ -1,0 +1,55 @@
+{% extends "base_board.html" %}
+{% load static %}
+
+{% block content %}
+
+<article>
+    <a href="{% url 'desk-add' %}">
+        <button>Add new Desk</button>
+    </a>
+</article>
+
+{% for desk in desks %}
+<div class="col-md-4">
+    <div class="card mb-2">
+        <img class="card-img-top" src="{{ desk.image.url }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ desk.title }}</h5>
+
+            <a href="{% url 'desk-detail' desk.pk %}"
+               class="btn btn-primary">
+                See More
+            </a>
+
+
+            <div class="d-flex">
+                {% include "add_to_favorites.html" with type='desk' id=desk.id %}
+                {% include "remove_from_favorites.html" with type='desk' id=desk.id %}
+            </div>
+                        <div class="d-flex">
+                {% include "add_to_archives.html" with type='desk' id=desk.id %}
+                {% include "remove_from_archives.html" with type='desk' id=desk.id %}
+            </div>
+            <article>
+                <a href="{% url 'desk-update' desk.id %}">
+                    <button>Update Desk</button>
+                </a>
+            </article>
+            <article>
+                <a href="{% url 'desk-delete' desk.id %}">
+                    <button>Delete Desk</button>
+                </a>
+            </article>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{% endfor %}
+
+
+{% endblock %}

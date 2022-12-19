@@ -1,0 +1,13 @@
+{% extends "base_board.html" %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            Are you sure you want to delete
+            <em>"{{ card.title }}"</em>
+            created on {{ card.date_created|date:'Y-m-d' }}?
+        </p>
+        <input type="submit" value="Confirm">
+    </form>
+
+{% endblock %}

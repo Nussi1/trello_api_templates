@@ -1,0 +1,39 @@
+{% extends "base_board.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="jumbotron">
+<div>
+
+
+<table>
+    {% for item in request.session.favorites %}
+    <div>
+    {% for k, v in item.items %}
+    <p>{{ v }}</p>
+    {% endfor %}
+        </div>
+    {% endfor %}
+</table>
+
+</div>
+</div>
+
+
+{% for fav in favourites %}
+<div class="col-md-4">
+    <div class="card mb-2">
+        <img class="card-img-top" src="{{ desk.image.url }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ fav.desk }}</h5>
+        </div>
+    </div>
+
+</div>
+
+
+{% endfor %}
+
+
+{% endblock %}

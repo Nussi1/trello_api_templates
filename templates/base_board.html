@@ -1,0 +1,63 @@
+{% extends "base_window.html" %}
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Trello</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+
+
+<div id="p1" class="mdl-progress mdl-js-progress"></div>
+
+<div class="kanban__title">
+
+
+    <h1><i class="material-icons">Kanban board</i> Trello task</h1></div>
+
+
+<div class="dd">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="message">
+            {{ message }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+
+</div>
+
+
+
+<script
+        src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.1/spectrum.min.js"
+        integrity="sha512-1aNp9qKP+hKU/VJwCtYqJP9tdZWbMDN5pEEXXoXT0pTAxZq1HHZhNBR/dtTNSrHO4U1FsFGGILbqG1O9nl8Mdg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+    this.MaterialProgress.setProgress(44);
+  });
+
+
+</script>
+<script src="{% static '../static/js/main.js' %}"></script>
+
+
+
+
+
+

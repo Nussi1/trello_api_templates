@@ -1,0 +1,68 @@
+{% extends "base_board.html" %}
+{% load static %}
+
+{% block content %}
+
+<menu class="kanban">
+    <article>
+        <a href="{% url 'column-add' desk.id %}">
+            <button>Add new Column</button>
+        </a>
+        <button class="viewkanban"><i class="material-icons ">view_column</i></button>
+        <button class="viewlist"><i class="material-icons">view_list</i></button>
+
+    </article>
+</menu>
+
+{% for column in columns %}
+
+
+<ol class="kanban To-do">
+    <div>
+        <a style="color:#A6C1D6" class="material-icons" href="{% url 'column-update' column.id %}">&#128394;️ Edit </a>
+        <a style="color:#A6C1D6" class="material-icons" href="{% url 'column-delete' column.id %}">&#128465;&#65039; Delete</a>
+
+    </div>
+
+
+    <div class="kanban__title">
+        <h2>{{ column.title }}</h2>
+    </div>
+
+   {% for j in column.entries.all %}
+
+    <li class="dd-item" data-id="1">
+
+        <h3 class="title dd-handle"> {{ j.title }}
+
+        </h3>
+        <div class="text" contenteditable="true">{{ j.content }}
+        </div>
+
+
+        <div class="actions">
+            <i class="material-icons">
+                <h2>{{ j.date_created|date:'Y-m-d H:i' }}</h2>
+            </i>
+            <i class="material-icons"><a class="material-icons"  href="{% url 'card-update' j.id %}" >&#128394;</a>Edit </i>
+            <i class="material-icons"><a class="material-icons" href="{% url 'card-delete' j.id %}">&#128465;&#65039;</a>Delete </i>
+            <i class="material-icons"><a class="material-icons" href="{% url 'card-detail' j.pk %}">👀</a>View </i>
+
+        </div>
+
+
+
+    </li>
+
+    {% endfor %}
+    <article>
+        <a href="{% url 'card-add' column.pk %}">
+            <button>Add new card</button>
+        </a>
+    </article>
+</ol>
+
+{% endfor %}
+
+
+{% endblock %}

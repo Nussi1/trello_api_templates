@@ -1,0 +1,5 @@
+<form action="{% url 'add_archive' id=desk.id %}" method="post">{% csrf_token %}
+    <input type="hidden" name="type" value="{{ type }}">
+    <input type="hidden" name="url_from" value="{{ request.path }}">
+    <button type="submit" class="btn btn-success">Add to archives</button>
+</form>

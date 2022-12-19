@@ -1,0 +1,14 @@
+{% if request.session.archives %}
+{% for item in request.session.archives %}
+{% if item.id == id|stringformat:"i" and item.type == type %}
+<div class="ml=3">
+    <form action="{% url 'remove_archive' id=desk.id %}" method="post">
+      {% csrf_token %}
+        <input type="hidden" name="type" value="{{ type }}">
+        <input type="hidden" name="url_from" value="{{ request.path }}">
+        <button type="submit" class="btn btn-danger">Remove to archives</button>
+    </form>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
